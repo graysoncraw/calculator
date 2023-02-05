@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <center>
+        <font face="Courier New">
+        <head>
+            <link rel="stylesheet" href="styling.css">
+            <h1>
+            Calculator
+            </h1>
+        </head>
+        <script>
+            function evaluate(){
+                document.getElementById("answerfield").value += " = " + eval(document.getElementById("answerfield").value);
+            }
+            function display(x){
+                var answerfield = document.getElementById("answerfield").value;
+                if (answerfield.includes("=")){
+                    document.getElementById("answerfield").value = "" + x;
+                }
+                else if (x == "="){
+                    evaluate();
+                }
+                else if (x == "C"){
+                    document.getElementById("answerfield").value = "";
+                }
+                else{
+                    document.getElementById("answerfield").value += x;
+                }
+            }
+        </script>
+        <body bgcolor="#90d5e8">
+            <input type="answerfield" name="answerfield" id="answerfield" placeholder="0" class = "textboxid" style="text-align:center;"/>
+            <table style="border-collapse: collapse;" cellpadding=5px width="5%" bgcolor="#6aabbd">
+                <tr align="center">
+                    <td >
+                        <button type="7btn" name="7btn" id="7btn" class="buttonblock" onclick="display('7')">7</button>
+                    </td>
+                    <td >
+                        <button type="8btn" name="8btn" id="8btn" class="buttonblock" onclick="display('8')">8</button>
+                    </td>
+                    <td>
+                        <button type="9btn" name="9btn" id="9btn" class="buttonblock" onclick="display('9')">9</button>
+                    </td>
+                    <td>
+                        <button type="/btn" name="/btn" id="/btn" class="buttonblock" onclick="display('/')">/</button>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <button type="4btn" name="4btn" id="4btn" class="buttonblock" onclick="display('4')">4</button>
+                    </td>
+                    <td>
+                        <button type="5btn" name="5btn" id="5btn" class="buttonblock" onclick="display('5')">5</button>
+
+                    </td>
+                    <td>
+                        <button type="6btn" name="6btn" id="6btn" class="buttonblock" onclick="display('6')">6</button>
+                    </td>
+                    <td>
+                        <button type="*btn" name="*btn" id="*btn" class="buttonblock" onclick="display('*')">*</button>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td> 
+                        <button type="1btn" name="1btn" id="1btn" class="buttonblock" onclick="display('1')">1</button>
+                    </td>
+
+                    <td>
+                        <button type="2btn" name="2btn" id="2btn" class="buttonblock" onclick="display('2')">2</button>
+                    </td>
+                    <td>
+                        <button type="3btn" name="3btn" id="3btn" class="buttonblock" onclick="display('3')">3</button>
+                    </td>
+                    <td>
+                        <button type="-btn" name="-btn" id="-btn" class="buttonblock" onclick="display('-')">-</button>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td> 
+                        <button type="Cbtn" name="Cbtn" id="Cbtn" class="buttonblock" onclick="display('C')">C</button>
+                    </td>
+
+                    <td>
+                        <button type="0btn" name="0btn" id="0btn" class="buttonblock" onclick="display('0')">0</button>
+                    </td>
+                    <td>
+                        <button type="=btn" name="=btn" id="=btn" class="buttonblock" onclick="display('=')">=</button>
+                    </td>
+                    <td>
+                        <button type="+btn" name="+btn" id="+btn" class="buttonblock" onclick="display('+')">+</button>
+                    </td>
+                </tr>
+            </table>
+        </body>
+    </font>  
+    </center>
+</html>
